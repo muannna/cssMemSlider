@@ -42,7 +42,7 @@ main {
 .slider {
     background-color: transparent;
     border-radius: 0.5rem;
-    max-width: 61rem;
+    max-width: 70rem;
     overflow: hidden;
     display: grid;
     flex-direction: column;
@@ -61,8 +61,7 @@ main {
 .slider-items {
     display: flex;
     max-width: 500%;
-    max-height: 54rem;
-    gap: 2rem;
+    
     grid-area: B;
     box-shadow: 0rem 0.9rem 0.8rem -0.6rem rgba(15, 15, 15, 0.3);
     margin-bottom: 2rem;
@@ -104,13 +103,37 @@ main {
     height: 0.8rem;
     border-radius: 50%;
     border: 0.1rem solid blue;
+    background-color: blue;
     cursor: pointer;
+}
+
+.slider-label:active .label-button {
+    background-color: #fff;
+}
+
+#slide1:checked ~ .slider-buttons .first > .label-button {
+    background-color: transparent;
+}
+
+#slide2:checked ~ .slider-buttons .second > .label-button {
+    background-color: transparent;
+}
+
+#slide3:checked ~ .slider-buttons .third > .label-button {
+    background-color: transparent;
+}
+
+#slide4:checked ~ .slider-buttons .forth > .label-button {
+    background-color: transparent;
+}
+
+#slide5:checked ~ .slider-buttons .fifth > .label-button {
+    background-color: transparent;
 }
 
 .slide-names {
     display: flex;
     width: 100%;
-    gap: 2rem;
     grid-area: C;
     overflow: hidden;
 }
@@ -131,35 +154,35 @@ main {
 }
 
 #slide2:checked ~ .slider-items .one {
-    margin-left: -63rem;
+    margin-left: -100%;
 }
 
 #slide2:checked ~ .slide-names .one {
-    margin-left: -36.9rem;
+    margin-left: -100%;
 }
 
 #slide3:checked ~ .slider-items .one {
-    margin-left: -126rem;
+    margin-left: -200%;
 }
 
 #slide3:checked ~ .slide-names .one {
-    margin-left: -73.8rem;
+    margin-left: -200%;
 }
 
 #slide4:checked ~ .slider-items .one {
-    margin-left: -189rem;
+    margin-left: -300%;
 }
 
 #slide4:checked ~ .slide-names .one {
-    margin-left: -110.7rem;
+    margin-left: -300%;
 }
 
 #slide5:checked ~ .slider-items .one {
-    margin-left: -252rem;
+    margin-left: -400%;
 }
 
 #slide5:checked ~ .slide-names .one {
-    margin-left: -147.6rem;
+    margin-left: -400%;
 }
 
 @media (max-width: 480px) {
