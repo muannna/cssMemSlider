@@ -1,0 +1,204 @@
+/* roboto-regular - latin_cyrillic */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/roboto-v29-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./assets/fonts/roboto-v29-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/roboto-v29-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./assets/fonts/roboto-v29-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/roboto-v29-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/roboto-v29-latin_cyrillic-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #3a3a3a;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.slider {
+    background-color: transparent;
+    border-radius: 0.5rem;
+    max-width: 70rem;
+    overflow: hidden;
+    display: grid;
+    flex-direction: column;
+    margin: 0 2rem;
+    grid-template-areas: "A A A"
+                         "B B B"
+                         "C C D";
+}
+
+.slider-items {
+    display: flex;
+    max-width: 500%; 
+    grid-area: B;
+    box-shadow: 0rem 0.9rem 0.8rem -0.6rem rgba(15, 15, 15, 0.3);
+    margin-bottom: 2rem;
+}
+
+.slider-btn {
+    visibility: hidden;
+    grid-area: A;
+}
+
+.slide-img {
+    max-width: 100%;
+    height: auto;
+    transition: 0.2s ease;
+    user-select: none;
+}
+
+.slider-buttons {
+    height: 2rem;
+    display: flex;
+    grid-area: D;
+    justify-content: flex-end;
+    margin-bottom: 6rem;
+}
+
+.slider-label {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-label:hover > .label-button {
+    background-color: rgb(247, 183, 64);
+    border-color: rgb(247, 183, 64);
+}
+
+.label-button {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 0.1rem solid #fff;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.slider-label:active .label-button {
+    background-color: rgb(102, 124, 109);
+    border-color: rgb(193, 209, 47);
+}
+
+#slide1:checked ~ .slider-buttons .first > .label-button {
+    background-color: transparent;
+}
+
+#slide2:checked ~ .slider-buttons .second > .label-button {
+    background-color: transparent;
+}
+
+#slide3:checked ~ .slider-buttons .third > .label-button {
+    background-color: transparent;
+}
+
+#slide4:checked ~ .slider-buttons .forth > .label-button {
+    background-color: transparent;
+}
+
+#slide5:checked ~ .slider-buttons .fifth > .label-button {
+    background-color: transparent;
+}
+
+.slide-names {
+    display: flex;
+    width: 100%;
+    grid-area: C;
+    overflow: hidden;
+}
+
+.slide-name {
+    min-width: 100%;
+    font-size: 2rem;
+    color: #ddd;
+    transition: 0.2s ease;
+}
+
+#slide1:checked ~ .slider-items .one {
+    margin-left: 0rem;
+}
+
+#slide1:checked ~ .slide-names .one {
+    margin-left: 0rem;
+}
+
+#slide2:checked ~ .slider-items .one {
+    margin-left: -100%;
+}
+
+#slide2:checked ~ .slide-names .one {
+    margin-left: -100%;
+}
+
+#slide3:checked ~ .slider-items .one {
+    margin-left: -200%;
+}
+
+#slide3:checked ~ .slide-names .one {
+    margin-left: -200%;
+}
+
+#slide4:checked ~ .slider-items .one {
+    margin-left: -300%;
+}
+
+#slide4:checked ~ .slide-names .one {
+    margin-left: -300%;
+}
+
+#slide5:checked ~ .slider-items .one {
+    margin-left: -400%;
+}
+
+#slide5:checked ~ .slide-names .one {
+    margin-left: -400%;
+}
+
+@media (max-width: 480px) {
+    .slider {
+        margin: 0 1rem;
+        grid-template-areas: "A A A"
+                             "B B B"
+                             "D D D"
+                             "C C C";
+    }
+
+    .slider-buttons {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .slide-name {
+        margin-bottom: 6rem;
+        font-size: 1.8rem;
+    }
+}
